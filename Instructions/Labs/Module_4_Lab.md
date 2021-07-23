@@ -112,9 +112,9 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, search for and select **Azure Active Directory** and, on the Azure Active Directory blade, select **+ Create a tenant**.
 
-1. On the **Basics** tab of the **Create a directory** blade, select the **Azure Active Directory** option and select **Next: Configuration >**.
+1. On the **Basics** tab of the **Create a tenant** blade, select the **Azure Active Directory** option and select **Next: Configuration >**.
 
-1. On the **Configuration** tab of the **Create a directory** blade, specify the following settings (leave others with their existing values):
+1. On the **Configuration** tab of the **Create a tenant** blade, specify the following settings (leave others with their existing values):
 
     | Setting | Value |
     | --- | --- |
@@ -175,11 +175,11 @@ The main tasks for this exercise are as follows:
 
 1. On the **Azure Active Directory Premium P2 \| Licensed users** blade, select **+ Assign**. 
 
-1. On the **Assign license** blade, select **Users**, and on the **Users** blade, select both your account and the **az30410-aaduser1** user account and click **Select** for each.
+1. On the **Assign license** blade, select **Add users and groups**, and on the **Add users and groups** blade, select both your account and the **az30410-aaduser1** user account and click **Select** for each.
 
 1. Back on the **Assign license** blade, select **Assignment options**, review the options listed on the **License options** blade, and select **OK**.
 
-1. On the **Assign license** blade, select **Assign**. 
+1. On the **Assign license** blade, select **Review and Assign** the on the **Assign** page, select **Assign**. 
 
 
 ### Exercise 2: Integrate an AD DS forest with an Azure AD tenant
@@ -258,9 +258,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Install Azure AD Connect
 
-1. Within the Remote Desktop session to **az30410a-vm1**, in Microsoft edge, navigate to the download page of [Microsoft Edge](https://www.microsoft.com/en-us/edge/business/download), download Microsoft Edge installer and perform the installation.
+1. Within the Remote Desktop session to **az30410a-vm1**, in Microsoft edge, navigate to the download page of [Microsoft Edge](https://www.microsoft.com/en-us/edge), download Microsoft Edge installer and perform the installation.
 
-1. Within the Remote Desktop session to **az30410a-vm1**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30410-aaduser1** user account you created the previous exercise. When prompted, specify the full user name you recorded and the **Pa55w.rd1234** password.
+1. Copy the link and paste in the new tab and scroll down. Click on download.
+
+1. Within the Remote Desktop session to **az30410a-vm1**, start Microsoft edge, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30410-aaduser1** user account you created the previous exercise. When prompted, specify the full user name you recorded and the **Pa55w.rd1234** password.
 
 1. In the Azure portal, search for and select **Azure Active Directory** and, on the **Adatum Lab | Overview** blade, select **Azure AD Connect**.
 
