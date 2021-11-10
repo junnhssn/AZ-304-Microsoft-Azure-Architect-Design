@@ -402,7 +402,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Verify Azure AD conditional access
 
-1. Within the Remote Desktop session to **az30410a-vm1**, in the Microsoft edge window, select **Settings** menu header, in the **Settings** menu, select **Safety**, in the cascading menu, select **InPrivate Browsing**, and, in the InPrivate Microsoft edge window, navigate to the Access Panel Applications portal [https://myapplications.microsoft.com](https://myapplications.microsoft.com).
+1. Within the Remote Desktop session to **az30410a-vm1**, in the Microsoft edge window, select **Settings** menu header, in the cascading menu, select **InPrivate Browsing**, and, in the InPrivate Microsoft edge window, navigate to the Access Panel Applications portal [https://myapplications.microsoft.com](https://myapplications.microsoft.com).
 
 1. When prompted, sign in by using the synchronized Azure AD account of the **aduser1**, using the full user name you recorded in the previous exercise and the **Pa55w.rd1234** password. 
 
