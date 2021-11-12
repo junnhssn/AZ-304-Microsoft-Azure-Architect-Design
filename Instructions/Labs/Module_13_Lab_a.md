@@ -57,7 +57,7 @@ The main tasks for this exercise are as follows:
 
 1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
 
-1. Select **Use existing** under Resource Group then select **az30304a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
+1. Select **Use existing** under Resource Group then select **az30304a-labRG** and enter **sa<inject key="DeploymentID" enableCopy="true"/>** for storage account name and Enter **fs<inject key="DeploymentID" enableCopy="true"/>** then click on **Create Storage**.
 
    >Note: You can find the Deployment-id from the environment details tab.
 
@@ -103,9 +103,14 @@ The main tasks for this exercise are as follows:
    ```powershell
    $password = 'Pa55w.rd1234.@z304'
    $securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
-   $az30304aadapp = New-AzADApplication -DisplayName 'az30304aadsp' -HomePage 'http://az30304aadsp' -IdentifierUris 'http://az30304aadsp' -Password $securePassword
+   Connect-AzureAD
+   $primaryDomain = Get-AzureADDomain | Where-Object {$_.Name -like "*onmicrosoft*"} | Select -Expand Name
+   $tenantId = Get-AzTenant | Where-Object {$_.Domains -Eq $primaryDomain} | Select -Expand Id
+   $az30304aadapp = New-AzADApplication -DisplayName 'az30304aadspDID' -HomePage 'http://az30304aadspDID' -IdentifierUris ('api://' + $tenantId + '/az30304aadspDID' ) -Password    $securePassword
    ```
-
+   
+   > NOTE!! Replace DID with your unique deployment ID, Which can be found under the enviornment details page.
+   
 1. From the Cloud Shell pane, run the following to create a new Azure AD service principal associated with the application you created in the previous step:
 
    ```powershell
@@ -137,7 +142,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Role | **Reader** |
     | Assign access to | **User, group, or service principal** |
-    | Select | **az30304aadsp** |
+    | Select | **az30304aadsp<inject key="DeploymentID" enableCopy="true"/>** |
 
 
 ### Exercise 2: Implement an Azure logic app
@@ -179,7 +184,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Logic App Designer** blade, select **Blank Logic App**. This will display a blank designer workspace.
 
-1. Use the **Search connectors and triggers** text box, to search for **Event Grid**, in the list of results, in the **Triggers** column, select **When a resource event occurs** Azure Event Grid trigger to add it to the designer workspace.
+1. Use the **Search connectors and triggers** text box, to search for **Azure Event Grid**, in the list of results, in the **Triggers** column, select **When a resource event occurs** Azure Event Grid trigger to add it to the designer workspace.
 
 1. In the **Azure Event Grid** tile, select the **Connect with Service Principal** link, specify the following settings, and select **Create**:
 
@@ -209,7 +214,7 @@ The main tasks for this exercise are as follows:
 
 1. In the the Azure portal, on the Logic App Designer blade of the newly provisioned Azure logic app, select **+ New step**. 
 
-1. In the choose an operation tile, use the **Search connectors and actions** text box, to search for **Condition**, in the list of results, in the **Actions** column, select **Condition** to add it to the designer workspace.
+1. In the choose an operation tile, use the **Search connectors and actions** text box, to search for **Control**, in the list of results, in the **Actions** column, select **Condition** to add it to the designer workspace.
 
 1. Select the ellipsis symbol in the upper right corner of the **Condition** tile, in the pop-up menu, select **Rename**, and replace **Condition** with the text **If a virtual machine in the resource group has changed**. 
 
