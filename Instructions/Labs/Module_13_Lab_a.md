@@ -100,6 +100,8 @@ The main tasks for this exercise are as follows:
 
 1. From the Cloud Shell pane, run the following to create a new Azure AD application that you will associate with the service principal you create in the subsequent steps of this task:
 
+   > **NOTE!! Replace DID with your unique deployment ID, Which can be found under the enviornment details page.**
+
    ```powershell
    $password = 'Pa55w.rd1234.@z304'
    $securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
@@ -108,8 +110,6 @@ The main tasks for this exercise are as follows:
    $tenantId = Get-AzTenant | Where-Object {$_.Domains -Eq $primaryDomain} | Select -Expand Id
    $az30304aadapp = New-AzADApplication -DisplayName 'az30304aadspDID' -HomePage 'http://az30304aadspDID' -IdentifierUris ('api://' + $tenantId + '/az30304aadspDID' ) -Password    $securePassword
    ```
-   
-   > NOTE!! Replace DID with your unique deployment ID, Which can be found under the enviornment details page.
    
 1. From the Cloud Shell pane, run the following to create a new Azure AD service principal associated with the application you created in the previous step:
 
