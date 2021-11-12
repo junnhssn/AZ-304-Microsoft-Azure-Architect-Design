@@ -57,7 +57,7 @@ The main tasks for this exercise are as follows:
 
 1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
 
-1. Select **Use existing** under Resource Group then select **az30304a-labRG** and enter **sa<inject key="DeploymentID" enableCopy="true"/>** for storage account name and Enter **fs<inject key="DeploymentID" enableCopy="true"/>** then click on **Create Storage**.
+1. Select **Use existing** under Resource Group then select **az30304a-labRG** and enter **sa<inject key="DeploymentID"/>** for storage account name and Enter **fs<inject key="DeploymentID"/>** then click on **Create Storage**.
 
    >Note: You can find the Deployment-id from the environment details tab.
 
