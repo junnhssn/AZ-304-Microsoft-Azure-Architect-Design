@@ -140,9 +140,9 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Role | **Reader** |
+    | Role | **Contributor** |
     | Assign access to | **User, group, or service principal** |
-    | Select | **az30304aadsp<inject key="DeploymentID" enableCopy="true"/>** |
+    | Select | **az30304aadsp<inject key="DeploymentID"/>** |
 
 
 ### Exercise 2: Implement an Azure logic app
